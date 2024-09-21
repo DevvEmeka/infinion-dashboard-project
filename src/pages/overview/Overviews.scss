@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+.overview-cover {
+    padding: 0 50px 0 50px;
+
+    .overview-main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+
+        .overview-txt {
+            color: #247B7B;
+            font-weight: 700;
+            font-size: 24px;
+        }
+
+        .overview-data {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+            .date-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 0.2px #999999 solid;
+                gap: 8px;
+                padding: 8px;
+                border-radius: 4px;
+
+                .calender {
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                    border-right: 1px solid #ECECEC;
+                    padding-right: 8px;
+
+                    .cal-icon {
+                        color: #247B7B;
+                        cursor: pointer;
+                    }
+
+                    .cal-txt {
+                        font-size: 12px;
+                        font-weight: 500;
+                        font-family: "Nunito", sans-serif;
+                    }
+                }
+
+                .realtime-date {
+                    display: flex;
+                    align-items: center;
+
+                    p {
+                        color: #666666;
+                        font-size: 12px;
+                        font-weight: 500;
+                        font-family: "Nunito", sans-serif;
+                    }
+
+                    .arrow-icon {
+                        color: #247B7B;
+                        width: 24px;
+                        height: 24px;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .export {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 4px;
+                padding: 10px 32px 10px 32px;
+                gap: 8px;
+                background-color: #F0F4F4;
+                cursor: pointer;
+
+                p {
+                    color: #247B7B;
+                    font-size: 14px;
+                    font-weight: 600;
+                    font-family: "Nunito", sans-serif;
+                }
+
+                .export-icon {
+                    color: #247B7B;
+                }
+            }
+        }
+    }
+}

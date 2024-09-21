@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+.sidebar_container {
+    position: fixed;
+    width: 20%;
+    left: 0;
+    top: 0;
+    background: #F0F4F4;
+    height: 100vh;
+    z-index: 10;
+    border-right: 1px #F0F4F4 solid;
+    padding: 20px 16px 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logo {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: center;
+        padding-bottom: 5px;
+
+        .logo-img {
+            width: 48px;
+            height: 48px;
+        }
+
+        .logo-txt {
+            font-weight: 700;
+            font-size: 32px;
+            font-family: "Work Sans", sans-serif;
+            background-image: linear-gradient(99.07deg, #247B7B 2.54%, #3B247B 101.29%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .side-content {
+        list-style: none;
+        margin: 5px 0 0 0 0;
+        padding: 0;
+        gap: 5px;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        margin-bottom: 20px;
+
+        li {
+            padding: 10px;
+            border-radius: 10px;
+
+            a {
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: #455454;
+
+                span {
+                    font-weight: 600;
+                    font-size: 14px;
+                    font-family: "Nunito", sans-serif;
+                }
+
+                .list-icons {
+                    margin-top: 4px;
+                }
+            }
+        }
+
+        .overview a {
+            color: #247B7B;
+            border-radius: 0px 4px 4px 0px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 1);
+            border: 0px 0px 0px 1.5px;
+            gap: 10px;
+        }
+
+        .new-campaign a {
+            color: #FFFFFF;
+            background-color: rgba(36, 123, 123, 1);
+            padding: 10px;
+            border-radius: 4px;
+            box-shadow: 0px 5px 15px 0px rgba(36, 123, 123, 0.15);
+        }
+
+        .active-link a {
+            color: indigo;
+        }
+    }
+
+    .care-container {
+        padding: 20px 20px 10px 20px;
+        background-color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        border-radius: 4px;
+
+        .inner-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            font-family: "Nunito", sans-serif;
+
+            .care-icon {
+                width: 24px;
+                height: 24px;
+                color: #247B7B;
+            }
+
+            h3 {
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 20px;
+                background-image: linear-gradient(96.87deg, #247B7B 13.61%, #3B247B 68.44%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
+            }
+
+            .care-txt {
+                font-weight: 500;
+                font-size: 12px;
+                // line-height: 16px;
+                text-align: center;
+                color: rgba(102, 102, 102, 1);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .care-btn {
+            border-radius: 4px;
+            border: 1px #247B7B solid;
+            color: #247B7B;
+            font-weight: 600;
+            font-size: 12px;
+            padding: 8px 10px 8px 10px;
+        }
+    }
+}

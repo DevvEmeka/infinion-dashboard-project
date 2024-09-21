@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Custom container class */
+.container-style {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+
+    li {
+        margin: 0 5px;
+        display: inline-block;
+
+        a {
+            display: block;
+            font-size: 16px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-weight: 500;
+            color: #666666;
+            font-family: "Work Sans", system-ui;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: #f0f0f0;
+                cursor: pointer;
+                border-radius: 50%;
+            }
+        }
+
+        /* Active page */
+        &.selected a {
+            background-color: #247B7B;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 50%;
+        }
+
+        /* Disabled previous/next */
+        &.disabled a {
+            color: #999;
+            pointer-events: none;
+        }
+    }
+}
+
+// Button
+.icon-rt {
+    color: #808080;
+    width: 20px;
+    height: 16px;
+    text-align: center;
+}
+
+.icon-lf {
+    color: #808080;
+    width: 20px;
+    height: 16px;
+    text-align: center;
+}

@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+.header-cover {
+    width: full;
+    overflow-x: hidden;
+
+    .inner-cover {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // width: 1076px;
+        gap: 380px;
+        margin-left: 0px;
+        padding: 24px 0px 24px 85px;
+        border: solid rgba(243, 243, 243, 1) 0px 0px 1px 0px;
+
+        .search {
+            position: relative;
+            width: 300px;
+            height: 40px;
+
+            input {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                color: #FFFFFA;
+                background: transparent;
+                border: 1px solid #999999;
+                outline: none;
+                border-radius: 4px;
+                // padding: 0 10px 0 45px !important;
+                padding: 12px 10px 12px 10px !important;
+                backdrop-filter: blur(10px);
+            }
+
+            input::placeholder {
+                color: #666666;
+                font-size: 12px;
+                font-weight: 500;
+                text-align: center;
+            }
+
+            .search-icon {
+                position: absolute;
+                top: 30%;
+                transform: translate(-50%);
+                left: 280px;
+                padding-right: 10px;
+                color: #666666;
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+            }
+        }
+
+        .header-profile {
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+
+            .account {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-left: 6px;
+
+                .profile-icon {
+                    border-right: 1px solid #ffffff;
+                    width: 35px;
+                    height: 35px;
+                    cursor: pointer;
+                }
+
+                .arrow-icon {
+                    width: 24px;
+                    height: 24px;
+                    color: #247B7B;
+                    cursor: pointer;
+                }
+
+                .profile-txt {
+                    color: #333333;
+                    font-weight: 500;
+                    font-size: 14px;
+                    font-family: "Nunito", sans-serif;
+                }
+            }
+
+            .bell-container {
+                .bell-icon {
+                    border-right: 1px solid #F0F4F4;
+                    width: 24px;
+                    height: 24px;
+                    padding-right: 10px;
+                    margin-bottom: -15px;
+                    cursor: pointer;
+                    // https://lottiefiles.com/animations/empty-RBIL0twm1B
+                }
+            }
+        }
+    }
+
+    .header-profile {
+        display: flex;
+
+        .account {
+            display: flex;
+        }
+
+    }
+
+    .header-line {
+        border-top: 1px rgba(243, 243, 243, 1) solid;
+        width: inherit;
+        margin-top: 0;
+    }
+}

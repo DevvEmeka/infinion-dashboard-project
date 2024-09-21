@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  $primary-color: #FFFFFA;
+  $side-bar: #F0F4F4;
+  
+  :root {
+    background: $primary-color;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  body::-webkit-scrollbar {
+    display: none;
+  }
