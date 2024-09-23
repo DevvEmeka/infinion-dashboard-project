@@ -4,6 +4,7 @@ import { HiMiniArrowUpTray } from "react-icons/hi2";
 import { PiCalendarDots } from "react-icons/pi";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import CampaignFeedback from "../../components/campaign-feedback/CampaignFeedback";
+import CampaignInformation from "../campaign-information/CampaignInformation";
 
 const Overview = () => {
   return (
@@ -29,6 +30,7 @@ const Overview = () => {
       </div>
 
       <CampaignFeedback />
+      {/* <CampaignInformation /> */}
     </section>
     // <div>
     //   <ReactSelect />

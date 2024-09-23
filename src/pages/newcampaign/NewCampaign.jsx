@@ -1,10 +1,12 @@
-import React, { useState, KeyboardEventHandler, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./NewCampaign.scss";
 import axios from "axios";
 
 // REACT SELECT======
 import CreatableSelect from "react-select/creatable";
 import { useNavigate } from "react-router-dom";
+import { GiCheckMark } from "react-icons/gi";
+
 const components = {
   DropdownIndicator: null, // Remove the dropdown indicator for a cleaner input
 };
@@ -17,12 +19,11 @@ const createOption = (label) => ({
 // REACT SELECT======
 
 const NewCampaigns = () => {
-  // REACT SELECT======
   const [inputValue, setInputValue] = useState(""); // Manage input value
   const [value, setValue] = useState([]); // Manage selected options
-  console.log(value);
+  const [isModalVisible, setModalVisible] = useState(false); // Modal state
+  const navigate = useNavigate(); // React Router hook for navigation
 
-  // Handle keyboard events (Enter/Tab) to add new options
   const handleKeyDown = (event) => {
     if (!inputValue) return;
     switch (event.key) {
@@ -36,13 +37,12 @@ const NewCampaigns = () => {
         break;
     }
   };
-  // REACT SELECT======
 
   const [values, setValues] = useState({
     campaignName: "",
     campaignDescription: "",
-    startDate: new Date().toISOString(),
-    endDate: new Date().toISOString(),
+    startDate: "",
+    endDate: "",
     receiveDigest: false,
     linkedKeywords: [],
     dailyDigest: "",
@@ -80,41 +80,57 @@ const NewCampaigns = () => {
     });
   };
 
-  // HANDLE THE REACT SELECT
-  // Update linkedKeywords in values whenever selectedOptions changes
+  // Update linkedKeywords in values whenever selected options change
   useEffect(() => {
     const linkedKeywordsArray = value.map((option) => option.label);
     setValues((prevValues) => ({
       ...prevValues,
-      linkedKeywords: linkedKeywordsArray, // Update with array of strings
+      linkedKeywords: linkedKeywordsArray,
     }));
   }, [value]);
-  // HANDLE THE REACT SELECT
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Convert CreatableSelect options to an array of strings for linkedKeywords
+    const linkedKeywordsArray = value.map((option) => option.value);
+
+    // Format the start and end dates in ISO 8601 format
+    const formattedStartDate = values.startDate
+      ? new Date(values.startDate).toISOString()
+      : null;
+    const formattedEndDate = values.endDate
+      ? new Date(values.endDate).toISOString()
+      : null;
+
+    // Prepare the data to be posted
+    const dataToPost = {
+      ...values,
+      linkedKeywords: linkedKeywordsArray,
+      startDate: formattedStartDate,
+      endDate: formattedEndDate,
+    };
+
     axios
       .post(
         "https://infinion-test-int-test.azurewebsites.net/api/Campaign",
-        values
+        dataToPost
       )
       .then((res) => {
         console.log(res);
-        // Navigate to a new page after successful submission
-        navigate("/");
-        setValues({
-          startDate: new Date().toISOString(),
-          endDate: new Date().toISOString(),
-          linkedKeywords: [],
-          dailyDigest: "",
-          campaignName: "",
-          campaignDescription: "",
-          receiveDigest: false,
-        });
+        setModalVisible(true); // Show the modal after successful creation
       })
       .catch((err) => console.log(err));
   };
 
-  const navigate = useNavigate(); // React Router hook for navigation
+  const handleModalClose = () => {
+    setModalVisible(false); // Hide modal
+    navigate("/campaign_data"); // Navigate to home page after button click
+  };
+
+  const handleCancel = () => {
+    navigate("/");
+  };
 
   return (
     <section className="campaign-form">
@@ -143,26 +159,28 @@ const NewCampaigns = () => {
             />
           </div>
 
-          <div className="form-group-3">
-            <label htmlFor="startDate">Start Date</label>
-            <input
-              type="date"
-              name="startDate"
-              value={values.startDate ? values.startDate.slice(0, 10) : ""}
-              onChange={handleChangeDate}
-              placeholder="dd/mm/yyyy"
-            />
-          </div>
+          <div className="date-div">
+            <div className="form-group-3">
+              <label htmlFor="startDate">Start Date</label>
+              <input
+                type="date"
+                name="startDate"
+                value={values.startDate ? values.startDate.slice(0, 10) : ""}
+                onChange={handleChangeDate}
+                placeholder="dd/mm/yyyy"
+              />
+            </div>
 
-          <div className="form-group-4">
-            <label htmlFor="endDate">End Date</label>
-            <input
-              type="date"
-              name="endDate"
-              value={values.endDate ? values.endDate.slice(0, 10) : ""}
-              onChange={handleChangeDate}
-              placeholder="dd/mm/yyyy"
-            />
+            <div className="form-group-4">
+              <label htmlFor="endDate">End Date</label>
+              <input
+                type="date"
+                name="endDate"
+                value={values.endDate ? values.endDate.slice(0, 10) : ""}
+                onChange={handleChangeDate}
+                placeholder="dd/mm/yyyy"
+              />
+            </div>
           </div>
 
           <div className="form-group-5">
@@ -180,31 +198,21 @@ const NewCampaigns = () => {
             </label>
           </div>
 
-          {/* REACT SELECT ====== */}
           <div className="form-group-6">
-            <p>Linked Keywords</p>
+            <p className="keyword-txt">Linked Keywords</p>
             <CreatableSelect
-              components={components} // Disable dropdown indicator
-              inputValue={inputValue} // Controlled input value
-              isClearable // Allow clearing all options
-              isMulti // Enable multi-select
-              menuIsOpen={false} // Prevent dropdown from opening
-              onChange={(newValue) => setValue(newValue)} // Update selected options
-              onInputChange={(newValue) => setInputValue(newValue)} // Update input value on typing
-              onKeyDown={handleKeyDown} // Handle keypress events (Enter/Tab)
+              components={components}
+              inputValue={inputValue}
+              isClearable
+              isMulti
+              menuIsOpen={false}
+              onChange={(newValue) => setValue(newValue)}
+              onInputChange={(newValue) => setInputValue(newValue)}
+              onKeyDown={handleKeyDown}
               placeholder="To add keywords, type your keyword and press enter"
-              value={value} // Selected options displayed
+              value={value}
             />
-            <div>
-              <h4>Selected Values:</h4>
-              <ul>
-                {value.map((option, index) => (
-                  <li key={index}>{option.label}</li>
-                ))}
-              </ul>
-            </div>
           </div>
-          {/* REACT SELECT ====== */}
 
           <div className="form-group-7">
             <label htmlFor="dailyDigest">
@@ -226,11 +234,31 @@ const NewCampaigns = () => {
           </div>
 
           <div className="form-btn">
-            <button className="btn-submit">Stop Campaign</button>
-            <button className="btn-col" type="submit">Submit</button>
+            <button onClick={handleCancel} className="btn-submit">
+              Cancel
+            </button>
+            <button className="btn-col" type="submit">
+              Create Campaign
+            </button>
           </div>
         </form>
       </div>
+
+      {isModalVisible && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <div className="modal-icon">
+              <span>
+                <GiCheckMark />
+              </span>
+            </div>
+            <p>Campaign Successfully Created!</p>
+            <button onClick={handleModalClose} className="modal-button">
+              Go Back to campaign list
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

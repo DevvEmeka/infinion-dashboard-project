@@ -1,8 +1,8 @@
 import React from "react";
 import "./Layout.scss";
 import Sidebar from "../sidebar/Sidebar";
-import Header from "../campaign-header/CampaignHeader";
 import { Outlet } from "react-router-dom";
+import Header from "../header/Header";
 
 const Layout = () => {
   return (

@@ -2,9 +2,9 @@ import React from 'react';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import ReactPaginate from 'react-paginate';
 import { motion } from 'framer-motion';
-import './Campaign.scss'
+import './Campaign.scss';
 
-const Campaign = ({ setCurrentPage, totalPages }) => {
+const Campaign = ({ setCurrentPage, totalPages = 0 }) => { // Default to 0 to avoid undefined
   const handlePageClick = ({ selected }) => {
     setCurrentPage(selected); // Set current page based on selected page from pagination
   };
@@ -29,7 +29,7 @@ const Campaign = ({ setCurrentPage, totalPages }) => {
         }
         onPageChange={handlePageClick} // Trigger page change
         pageRangeDisplayed={6}
-        pageCount={totalPages} // Total pages from the API
+        pageCount={Math.ceil(totalPages)} // Ensure pageCount is an integer
         previousLabel={
           <span>
             <BsChevronLeft className="icon-lf" />

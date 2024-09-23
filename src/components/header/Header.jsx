@@ -10,7 +10,7 @@ const Header = () => {
     <header className="header-cover">
       <div className="inner-cover">
         <div className="search">
-          <input type="text" placeholder="search..." />
+          <input type="text" placeholder="search for anything..." />
           <IoMdSearch className="search-icon" />
         </div>
         <div className="header-profile">

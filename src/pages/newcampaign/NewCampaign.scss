@@ -1,310 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+
 .campaign-form {
+  width: 100%;
+  margin-top: 14px;
+  // padding: 0 60px 40px 90px;
+  padding: 0px 220px;
+  margin-left: -126px;
+
+  .form-header {
+    color: #247B7B;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
+  }
+
+  .form-cover {
     width: 100%;
-    margin-top: 30px;
-    padding: 0 70px 40px 70px;
-  
-    .form-header {
-      color: blue;
-      font-size: 15px;
-      font-family: Arial, sans-serif;
-      margin-bottom: 20px;
-    }
-  
-    .form-cover {
-      width: 100%;
-  
-      .form-group-1 {
-        position: relative;
-        margin-bottom: 20px;
-  
-        input {
-          width: 100%;
-          padding: 2px;
-          padding-top: 20px;
-          /* Add extra padding at the top to make space for the label */
-          font-size: 16px;
-          border: 2px solid #ccc;
-          border-radius: 5px;
-          outline: none;
-        }
-  
-        /* Style the label */
-        label {
-          position: absolute;
-          top: -20px;
-          /* Initial label position (inside input) */
-          left: 10px;
-          font-size: 16px;
-          color: #999;
-          transition: all 0.2s ease;
-          /* Smooth transition for label movement */
-          pointer-events: none;
-          /* Prevent clicks on the label */
-        }
-      }
-  
-      .form-group-2 {
-        position: relative;
-        margin-bottom: 20px;
-  
-        input {
-          width: 100%;
-          padding: 2px;
-          padding-top: 20px;
-          /* Add extra padding at the top to make space for the label */
-          font-size: 16px;
-          border: 2px solid #ccc;
-          border-radius: 5px;
-          outline: none;
-        }
-  
-        /* Style the label */
-        label {
-          position: absolute;
-          top: -20px;
-          /* Initial label position (inside input) */
-          left: 10px;
-          font-size: 16px;
-          color: #999;
-          transition: all 0.2s ease;
-          /* Smooth transition for label movement */
-          pointer-events: none;
-          /* Prevent clicks on the label */
-        }
-      }
-  
-      .form-group-3 {
-        position: relative;
-        margin-bottom: 20px;
-  
-        input {
-          width: 40%;
-          padding: 2px;
-          padding-top: 20px;
-          /* Add extra padding at the top to make space for the label */
-          font-size: 16px;
-          border: 2px solid #ccc;
-          border-radius: 5px;
-          outline: none;
-        }
-  
-        /* Style the label */
-        label {
-          position: absolute;
-          top: -20px;
-          /* Initial label position (inside input) */
-          left: 10px;
-          font-size: 16px;
-          color: #999;
-          transition: all 0.2s ease;
-          /* Smooth transition for label movement */
-          pointer-events: none;
-          /* Prevent clicks on the label */
-        }
-      }
-  
-      .form-group-4 {
-        position: relative;
-        margin-bottom: 20px;
-  
-        input {
-          width: 40%;
-          padding: 2px;
-          padding-top: 20px;
-          /* Add extra padding at the top to make space for the label */
-          font-size: 16px;
-          border: 2px solid #ccc;
-          border-radius: 5px;
-          outline: none;
-        }
-  
-        /* Style the label */
-        label {
-          position: absolute;
-          top: -20px;
-          /* Initial label position (inside input) */
-          left: 10px;
-          font-size: 16px;
-          color: #999;
-          transition: all 0.2s ease;
-          /* Smooth transition for label movement */
-          pointer-events: none;
-          /* Prevent clicks on the label */
-        }
-      }
-  
-      .form-group-5 {
-        position: relative;
-        margin-top: 30px;
-  
-        input {
-          width: 100%;
-          padding: 2px;
-          padding-top: 20px;
-          /* Add extra padding at the top to make space for the label */
-          font-size: 16px;
-          border: 2px solid #ccc;
-          border-radius: 5px;
-          outline: none;
-        }
-  
-        /* Style the label */
-        label {
-          position: absolute;
-          top: -20px;
-          /* Initial label position (inside input) */
-          left: 10px;
-          font-size: 16px;
-          color: #999;
-          transition: all 0.2s ease;
-          /* Smooth transition for label movement */
-          pointer-events: none;
-          /* Prevent clicks on the label */
-        }
-      }
-  
-      .form-group-6 {
-        margin-top: 40px;
-        p {
-          color: #999;
-        }
-        CreatableSelect {
-          padding: 100px 0 0 40px;
-        }
-      }
-  
-      .form-group-7 {
-        position: relative;
-        margin-bottom: 20px;
+
+    .form-group-1 {
+      position: relative;
+      margin-top: 30px;
+
+      input {
         width: 100%;
-  
-        label {
-          font-size: 16px;
-          margin-bottom: 8px;
-          display: block;
-          color: #999;
-          transition: all 0.2s ease;
-          // pointer-events: none;
-        }
-  
-        select {
-          // -webkit-appearance: none;
-          /* Remove default styling in WebKit browsers */
-          // -moz-appearance: none;
-          /* Remove default styling in Firefox */
-          // appearance: none;
-          /* Remove default styling for all browsers */
-          width: 20%;
-          padding: 10px;
-          font-size: 16px;
-          border: 2px solid #ccc;
-          border-radius: 5px;
-          background-color: white;
-          color: #333;
-          cursor: pointer;
-          outline: none;
-          transition: all 0.3s ease;
-        }
-  
-        select::after {
-          content: '▼';
-          /* Unicode arrow character */
-          font-size: 12px;
-          position: absolute;
-          top: 50%;
-          right: 15px;
-          pointer-events: none;
-          transform: translateY(-50%);
-        }
-  
-        select option {
-          padding: 10px;
-          background-color: #fff;
-        }
+        height: 28px;
+        padding: 20px 0 10px 8px;
+        /* Add extra padding at the top to make space for the label */
+        border: 0.5px solid #999999;
+        border-radius: 4px;
+        font-size: 12px;
+      }
+
+      /* Style the label */
+      label {
+        position: absolute;
+        top: -17px;
+        /* Initial label position (inside input) */
+        left: 0px;
+        font-size: 13.5px;
+        color: #666666;
+        font-weight: 500;
+      }
+    }
+
+    .form-group-2 {
+      position: relative;
+      margin-top: 30px;
+
+      input {
+        width: 100%;
+        height: 45px;
+        padding: 0 0 22px 8px;
+        /* Add extra padding at the top to make space for the label */
+        font-size: 12px;
+        border: 0.5px solid #999999;
+        border-radius: 5px;
+      }
+
+      /* Style the label */
+      label {
+        position: absolute;
+        top: -17px;
+        /* Initial label position (inside input) */
+        font-size: 13.5px;
+        left: 0px;
+        color: #666666;
+      }
+    }
+
+    .form-group-3 {
+      position: relative;
+      // margin-top: 30px;
+
+      input {
+        /* Add extra padding at the top to make space for the label */
+        font-size: 13.5px;
+        border: 0.5px solid #999999;
+        width: 233px;
+        height: 30px;
+        padding: 5px 2px 3px 6px;
+        /* Add extra padding at the top to make space for the label */
+        font-size: 13.5px;
+        border-radius: 4px;
+      }
+
+      /* Style the label */
+      label {
+        position: absolute;
+        top: -20px;
+        /* Initial label position (inside input) */
+        left: 0px;
+        font-size: 13.5px;
+        color: #666666;
+        /* Smooth transition for label movement */
+        pointer-events: none;
+        top: -17px;
+        /* Prevent clicks on the label */
+      }
+    }
+
+    .date-div {
+      // display: inline;
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      margin-top: 28px;
+      // justify-content: center;
+    }
+
+    .form-group-4 {
+      position: relative;
+      // margin-top: 20px;
+
+      input {
+        width: 232px;
+        height: 30px;
+        padding: 5px 2px 3px 6px;
+        /* Add extra padding at the top to make space for the label */
+        font-size: 13.5px;
+        border: 0.5px solid #999999;
+        border-radius: 4px;
+      }
+
+      /* Style the label */
+      label {
+        position: absolute;
+        top: -17px;
+        /* Initial label position (inside input) */
+        left: 10px;
+        font-size: 13.5px;
+        color: #666666;
+        transition: all 0.2s ease;
+        /* Smooth transition for label movement */
+        pointer-events: none;
+        /* Prevent clicks on the label */
+      }
+    }
+
+    .form-group-5 {
+      position: relative;
+      margin: 33px 0 0 -11px;
+
+      /* Style the label */
+      label {
+        position: absolute;
+        top: -20px;
+        /* Initial label position (inside input) */
+        left: 10px;
+        font-size: 13.5px;
+        color: #666666;
+        transition: all 0.2s ease;
+        /* Smooth transition for label movement */
+        pointer-events: none;
+        /* Prevent clicks on the label */
+      }
+    }
+
+    .form-group-6 {
+      margin-top: 40px;
+      font-size: 12px;
+
+      .keyword-txt {
+        color: #666666;
+        font-size: 13.5px;
+      }
+    }
+
+    .form-group-7 {
+      position: relative;
+      margin-bottom: 20px;
+      width: 100%;
+      margin-top: 10px;
+
+      label {
+        font-size: 13.5px;
+        margin-bottom: 2px;
+        display: block;
+        color: #666666;
+      }
+
+      select {
+        width: 24%;
+        height: 30px;
+        padding: 5px 7px;
+        font-size: 13.5px;
+        border: 0.5x solid #999999;
+        border-radius: 4px;
+        background-color: white;
+        color: #666666;
+        cursor: pointer;
+      }
+
+      // select::after {
+      //   content: '▼';
+      //   /* Unicode arrow character */
+      //   font-size: 12px;
+      //   position: absolute;
+      // }
+
+      select option {
+        padding: 10px;
+        background-color: #fff;
       }
     }
   }
-  
-  .form-btn {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-  
-    .btn-submit {
-      padding: 5px 30px 5px 30px;
-      border: red 2px solid;
-    }
-  
-    .btn-col {
-      padding: 5px 60px 5px 60px;
-      border: red 2px solid;
-    }
-  }
-  
-  /* When the input is focused or has content, move the label upwards */
-  input:focus+label,
-  input:not(:placeholder-shown)+label {
-    top: -15px;
-    /* Move the label above the input */
-    left: 10px;
-    font-size: 12px;
-    /* Make the label smaller */
-    color: #333;
-    /* Change the color */
-  }
-  
-  /* Optional: Input focus styling */
-  input:focus {
-    border-color: #007bff;
-    /* Change the border color on focus */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    /* Add a glow effect */
-  }
-  
-  // Switch data-type style
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 47px;
-    height: 23px;
-    margin-left: 500px;
-  }
-  
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  .slider {
-    position: absolute;
+}
+
+.form-btn {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+
+  .btn-submit {
+    padding: 10px;
+    border-radius: 4px;
+    color: #247B7B;
+    background-color: #FFFFFF;
+    height: 36px;
+    width: 196px;
+    border: #247B7B 0.5px solid;
     cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #6E0080;
-    transition: 0.4s;
-    border-radius: 20px;
   }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 20px;
-    width: 20px;
-    left: 0px;
-    bottom: 2px;
-    background-color: #F0F4F4;
-    transition: 0.4s;
-    border-radius: 50%;
+
+  .btn-submit:hover {
+    color: #FFFFFF;
+    background-color: #247B7B;
+    transition: all ease-in-out 0.5s;
   }
-  
-  input:checked+.slider {
-    background-color: #6E0080;
+
+  .btn-col {
+    padding: 10px;
+    border-radius: 4px;
+    color: #FFFFFF;
+    background-color: #247B7B;
+    height: 36px;
+    width: 196px;
+    border: #247B7B 0.5px solid;
+    cursor: pointer;
   }
-  
-  input:checked+.slider:before {
-    transform: translateX(26px);
+
+  .btn-col:hover {
+    background-color: #FFFFFF;
+    color: #247B7B;
+    border: none;
+    transition: all ease-in-out 0.5s;
+    box-shadow: 0px 10px 25px 0px rgba(36, 123, 123, 0.15);
   }
+}
+
+/* When the input is focused or has content, move the label upwards */
+input:focus+label,
+input:not(:placeholder-shown)+label {
+  top: -15px;
+  /* Move the label above the input */
+  left: 10px;
+  font-size: 12px;
+  /* Make the label smaller */
+  color: red;
+  /* Change the color */
+}
+
+/* Optional: Input focus styling */
+input:focus {
+  border-color: #007bff;
+  /* Change the border color on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  /* Add a glow effect */
+}
+
+// Switch data-type style
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 47px;
+  height: 22px;
+  margin-left: 444px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #6E0080;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 0px;
+  bottom: 1.5px;
+  background-color: #F0F4F4;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: #6E0080;
+}
+
+input:checked+.slider:before {
+  transform: translateX(26px);
+}
+
+
+// Modal Styling
+/* Modal background overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(217, 217, 217, 0.9);
+  /* #D9D9D9 with some opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #FFFFFF;
+  padding: 50px 78px 50px 78px;
+  border-radius: 8px;
+  gap: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .modal-icon {
+    position: relative;
+    background-color: #247B7B;
+    border-radius: 100px;
+    width: 43px;
+    height: 43px;
+   
+    span {
+      position: absolute;
+      color: #FFFFFF;
+      width: 0px;
+      height: 0px;
+      left: 14px;
+      top: 15px;
+    }
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 500;
+    font-weight: 700;
+    color: #666666;
+    font-family: "Nunito", sans-serif;
+  }
+
+  /* Button inside modal */
+  .modal-button {
+    padding: 12px 32px;
+    background-color: #247B7B;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+}
+
+.modal-button:hover {
+  background-color: #FFFFFF;
+  box-shadow: 0 0 5px #247B7B;
+  color: #247B7B;
+  border: none;
+}
